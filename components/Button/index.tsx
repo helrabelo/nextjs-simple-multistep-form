@@ -17,13 +17,13 @@ const StyledButton = styled.button`
   border: none;
   border-radius: 3px;
   color: ${css.white};
-  background: ${css.purple};
+  background: ${css.gray};
   cursor: pointer;
 
   &:hover,
   &:active,
   &:focus {
-    background: ${css.pink};
+    background: ${css.blue};
   }
 `;
 

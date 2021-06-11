@@ -11,12 +11,17 @@ $color-red-darker: #a02200;
 $color-link: $color-text;
 $color-link-hover: $color-pink;
 
-$break-xsmall: 370px;
-$break-small: 600px;
-$max-width: 960px;
+$break-xsmall: 420px;
+$break-small: 768px;
+$break-medium: 960px;
+$break-large: 1280px;
+$max-width: 1980;
 
-$medium-screen: 'only screen and (min-width : #{$break-xsmall})';
-$bigger-screen: 'only screen and (min-width : #{$break-small})';
+$phone-screen: 'only screen and (min-width : #{$break-xsmall})';
+$tablet-screen: 'only screen and (min-width : #{$break-small})';
+$tablet-landscape-screen: 'only screen and (min-width : #{$break-medium})';
+$laptop-screen: 'only screen and (min-width : #{$break-large})';
+$wide-screen: 'only screen and (min-width : #{$max-width})';
 
 @mixin flex {
   display: flex;

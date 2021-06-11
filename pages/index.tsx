@@ -1,51 +1,54 @@
-import React, { useState, useCallback } from 'react';
-import styled from 'styled-components';
+import React, { useState } from 'react';
 
 import Layout from 'components/Layout';
-import Button from 'components/Button';
+import Form from 'components/Form';
+
 import {
   defaultTitle,
   defaultDescription,
   defaultKeywords,
 } from 'lib/constants';
 
-import styles from 'styles/index.module.scss';
+import styled from 'styled-components';
+// import styles from 'styles/index.module.scss';
 
-const layoutProps = {
-  title: defaultTitle,
-  description: defaultDescription,
-  keywords: defaultKeywords,
-};
-
-const Paragraph = styled.p.attrs({
-  className: 'main__description',
-})``;
+const PageContainer = styled.div`
+  border: thin solid red;
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  grid-template-columns: 5fr 1fr;
+  border: thin solid red;
+  align-items: center;
+`;
 
 const IndexPage = () => {
-  const [counter, setCounter] = useState(0);
-  const incrementCounter = useCallback(() => {
-    setCounter(counter + 1);
-  }, [counter]);
+  const layoutProps = {
+    title: defaultTitle,
+    description: defaultDescription,
+    keywords: defaultKeywords,
+  };
+
+  const [form, setForm] = useState({
+    avatar: null,
+    name: '',
+    email: '',
+    password: '',
+    phone: '',
+    repeatUse: '',
+    user: '',
+    userType: 'Admin',
+  });
+
+  const handleFormChange = (field) => (e) =>
+    setForm({ ...form, [field]: e.target.value });
 
   return (
     <Layout {...layoutProps}>
-      <div className={`${styles.main} ${styles.common}`}>
-        <section className={`${styles.main} ${styles.section}`}>
-          <h1 className={styles.main__title}>
-            Welcome to a Simple Next.js Boilerplate!
-          </h1>
-          <Paragraph>
-            This is a simple boilerplate for Next.js, with TypeScript,
-            SASS/SCSS, Styled Components, Jest, ESLint, Prettier, and deployed
-            with Serverless.
-          </Paragraph>
-          <Paragraph>Click the button, have some fun.</Paragraph>
-          <Button onClick={incrementCounter}>
-            This button has been clicked {counter} time
-            {counter === 1 ? '' : 's'}!
-          </Button>
-        </section>
-      </div>
+      <PageContainer>
+        <Form formData={form} handleFormChange={handleFormChange} />
+        <div>Dummy heading</div>
+      </PageContainer>
     </Layout>
   );
 };

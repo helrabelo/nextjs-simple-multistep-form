@@ -7,7 +7,7 @@ export const defaultKeywords =
 export const githubUrl = 'https://github.com/helrabelo/nextjs-boilerplate';
 
 export const css = {
-  purple: '#3c1143',
-  pink: '#c25178',
+  gray: '#ccc',
+  blue: '#296ff9',
   white: '#ffffff',
 };

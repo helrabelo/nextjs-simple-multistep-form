@@ -3,8 +3,6 @@ import Head from 'next/head';
 import { Helmet } from 'react-helmet';
 
 import Loading from 'components/Loading';
-import Header from './Header';
-import Footer from './Footer';
 
 type LoadingContextValue = {
   showLoading: () => void;
@@ -59,11 +57,9 @@ const Layout = ({ children, title, description, keywords }: LayoutProps) => {
       {SEOOverride}
       <Loading isShowing={isLoading} />
       <div className="wrapper">
-        <Header />
         <LoadingContext.Provider value={loadingContextValue}>
           {children}
         </LoadingContext.Provider>
-        <Footer />
       </div>
     </>
   );
