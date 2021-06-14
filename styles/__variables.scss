@@ -1,27 +1,32 @@
-$color-background: #f4f4f4;
-$color-text: #222222;
-$color-purple: #3c1143;
-$color-pink: #c25178;
-$color-white: #ffffff;
-$color-black: #000000;
-$color-text-gray: #555555;
-$color-border-gray: #999999;
-$color-red: #bc3232;
-$color-red-darker: #a02200;
-$color-link: $color-text;
-$color-link-hover: $color-pink;
+$colorBlack: #000000;
+$colorWhite: #ffffff;
+$colorBlue: #0071f4;
+$colorCyan: #b3d6ff;
+$colorGray: #808080;
+$colorFrafite: #526780;
+$colorLime: #00f482;
+$colorRed: #f03;
 
-$break-xsmall: 420px;
-$break-small: 768px;
-$break-medium: 960px;
-$break-large: 1280px;
-$max-width: 1980;
+$colorBorderGray: #ccc;
+$colorBackground: $colorWhite;
+$colorLink: $colorBlue;
+$colorLinkHover: $colorCyan;
+$colorText: #333;
+$colorTextGray: #999;
 
-$phone-screen: 'only screen and (min-width : #{$break-xsmall})';
-$tablet-screen: 'only screen and (min-width : #{$break-small})';
-$tablet-landscape-screen: 'only screen and (min-width : #{$break-medium})';
-$laptop-screen: 'only screen and (min-width : #{$break-large})';
-$wide-screen: 'only screen and (min-width : #{$max-width})';
+$breakXsmall: 420px;
+$breakSmall: 768px;
+$breakMedium: 960px;
+$breakLarge: 1280px;
+$maxWidth: 1980;
+
+$phoneScreen: 'only screen and (min-width : #{$breakXsmall})';
+$tabletScreen: 'only screen and (min-width : #{$breakSmall})';
+$tabletLandscapeScreen: 'only screen and (min-width : #{$breakMedium})';
+$laptopScreen: 'only screen and (min-width : #{$breakLarge})';
+$wideScreen: 'only screen and (min-width : #{$maxWidth})';
+
+$borderRadius: 24px;
 
 @mixin flex {
   display: flex;

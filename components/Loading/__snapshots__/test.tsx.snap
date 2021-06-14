@@ -2,7 +2,7 @@
 
 exports[`Loading renders the loading as expected 1`] = `
 <div
-  className="Loading Loading--show"
+  className="Loading LoadingShow"
 >
   <svg
     height="40px"

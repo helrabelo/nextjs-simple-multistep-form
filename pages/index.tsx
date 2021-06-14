@@ -4,22 +4,65 @@ import Layout from 'components/Layout';
 import Form from 'components/Form';
 
 import {
+  css,
   defaultTitle,
   defaultDescription,
   defaultKeywords,
 } from 'lib/constants';
 
 import styled from 'styled-components';
-// import styles from 'styles/index.module.scss';
 
 const PageContainer = styled.div`
   border: thin solid red;
   display: grid;
   width: 100%;
   height: 100vh;
-  grid-template-columns: 5fr 1fr;
-  border: thin solid red;
+  grid-template-columns: 2fr 1fr;
   align-items: center;
+`;
+
+const FormContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 36px;
+`;
+
+const HeaderContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: ${css.colorBlue};
+  padding: 24px 36px;
+`;
+
+const HeaderWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  max-width: 300px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+`;
+
+const Header = styled.h1`
+  font-size: 32px;
+  line-height: 48px;
+  margin-bottom: 48px;
+  text-align: center;
+  width: 100%;
+  color: ${css.colorWhite};
+`;
+
+const Copy = styled.p`
+  line-height: 32px;
+  font-weight: 200;
+  color: ${css.colorWhite};
 `;
 
 const IndexPage = () => {
@@ -30,14 +73,12 @@ const IndexPage = () => {
   };
 
   const [form, setForm] = useState({
-    avatar: null,
     name: '',
     email: '',
     password: '',
-    phone: '',
-    repeatUse: '',
+    repeatUser: '',
     user: '',
-    userType: 'Admin',
+    userType: { value: 'admin', label: 'Admin' },
   });
 
   const handleFormChange = (field) => (e) =>
@@ -46,8 +87,18 @@ const IndexPage = () => {
   return (
     <Layout {...layoutProps}>
       <PageContainer>
-        <Form formData={form} handleFormChange={handleFormChange} />
-        <div>Dummy heading</div>
+        <FormContainer>
+          <Form formData={form} handleFormChange={handleFormChange} />
+        </FormContainer>
+        <HeaderContainer>
+          <HeaderWrapper>
+            <Header>Dummy heading</Header>
+            <Copy>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos enim
+              nesciunt laborum facilis magni libero earum.
+            </Copy>
+          </HeaderWrapper>
+        </HeaderContainer>
       </PageContainer>
     </Layout>
   );

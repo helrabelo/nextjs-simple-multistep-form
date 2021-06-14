@@ -7,28 +7,41 @@ type ButtonProps = {
   onClick: any;
   children: React.ReactNode;
   className?: string;
+  disabled?: boolean;
   type?: 'button' | 'submit' | 'reset';
 };
 
 const StyledButton = styled.button`
-  margin: 1em auto;
-  padding: 1em 1.5em;
-  font-size: 1.2em;
+  margin: 24px auto;
+  padding: 16px 24px;
+  font-size: 16px;
   border: none;
   border-radius: 3px;
-  color: ${css.white};
-  background: ${css.gray};
+  color: ${css.colorWhite};
+  background: ${css.colorBlue};
   cursor: pointer;
+  width: 100%;
+  transition: 0.3s all ease-in-out;
 
-  &:hover,
-  &:active,
-  &:focus {
-    background: ${css.blue};
+  &:hover {
+    background: ${css.colorCyan};
+  }
+
+  &:disabled {
+    background: ${css.colorGray};
+    cursor: not-allowed;
   }
 `;
 
 const Button = forwardRef((props: ButtonProps, ref: any) => {
-  const { onClick, children, className, type, ...remainingProps } = props;
+  const {
+    onClick,
+    children,
+    className,
+    disabled,
+    type,
+    ...remainingProps
+  } = props;
 
   return (
     <StyledButton
@@ -36,6 +49,7 @@ const Button = forwardRef((props: ButtonProps, ref: any) => {
       onClick={onClick}
       className={className}
       type={type}
+      disabled={disabled}
       {...remainingProps}
     >
       {children}
@@ -45,6 +59,7 @@ const Button = forwardRef((props: ButtonProps, ref: any) => {
 
 Button.defaultProps = {
   type: 'button',
+  disabled: false,
 };
 
 export default Button;

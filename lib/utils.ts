@@ -14,6 +14,6 @@ const nameRegexp = /[a-zzéúíóáèùìòàõãñêûîôâëyüïöäA-ZÉÚ�
 
 export const validateName = (name) => nameRegexp.test(name);
 
-const passwordRegexp = /dsdf/;
+const passwordRegexp = /^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\d]){1,})(?=(.*[\W]){1,})(?!.*\s).{8,}$/;
 
 export const validatePassword = (password) => passwordRegexp.test(password);

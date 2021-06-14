@@ -3,21 +3,27 @@
 
 html,
 body {
-  font: 16px/16px 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+  font: 14px/24px 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
     'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background: $color-background;
-  color: $color-text;
+  background: $colorBackground;
+  color: $colorText;
+}
+
+p {
+  font-weight: 300;
 }
 
 a {
-  color: $color-link;
-  text-decoration: underline;
+  color: $colorLink;
+  text-decoration: none;
   transition: all 80ms ease-in;
+  font-weight: bold;
+  font-weight: 14px;
 
   &:hover,
   &:focus {
-    text-decoration: none;
-    color: $color-link-hover;
+    text-decoration: underline;
+    color: $colorLinkHover;
   }
 }
 
