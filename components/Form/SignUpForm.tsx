@@ -30,12 +30,11 @@ const FormWrapper = styled.form`
   height: 100%;
   margin: 0 auto;
   max-width: 450px;
-  padding: 24px 32px;
+  padding: 0 32px;
 
   @media (max-width: 768px) {
     max-width: 300px;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding: 24px 16px;
   }
 `;
 
@@ -72,16 +71,14 @@ const Form = forwardRef((props: FormProps, ref: any) => {
   const handleStepChange = (newStep) => () => setFormStep(newStep);
 
   const validateForm = (form) => {
-    return (
-      validateName(form.name) &&
-      form.name !== '' &&
-      validateEmail(form.email) &&
-      form.email !== '' &&
-      validatePassword(form.password) &&
-      form.password !== '' &&
-      validateUsername(user) &&
-      form.user === form.repeatUser
-    );
+    return formStep === 0
+      ? validateName(form.name) &&
+          form.name !== '' &&
+          validateEmail(form.email) &&
+          form.email !== '' &&
+          validatePassword(form.password) &&
+          form.password !== ''
+      : validateUsername(user) && form.user === form.repeatUser;
   };
 
   useEffect(() => {
@@ -146,6 +143,7 @@ const Form = forwardRef((props: FormProps, ref: any) => {
       {formStep === 1 && (
         <>
           <TextInput
+            auxText="Minimum 4 characters"
             value={user}
             label="Username"
             placeholder="Please enter your username"

@@ -17,7 +17,7 @@ const loadingContextDefault: LoadingContextValue = {
 export const LoadingContext = React.createContext(loadingContextDefault);
 
 type LayoutProps = {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   title?: string;
   description?: string;
   keywords?: string;

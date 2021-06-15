@@ -5,7 +5,8 @@ import { css } from 'lib/constants';
 export const PageContainer = styled.div`
   display: grid;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   grid-template-columns: 2fr 1fr;
   align-items: center;
   box-sizing: border-box;
@@ -24,6 +25,7 @@ export const FormContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 
   @media (max-width: 768px) {
     max-width: 300px;
@@ -42,7 +44,6 @@ export const HeaderContainer = styled.div`
 
 export const HeaderWrapper = styled.div`
   width: 100%;
-  height: 100%;
   max-width: 300px;
   display: flex;
   align-items: flex-start;
