@@ -1,6 +1,5 @@
 import React, { forwardRef, useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { css } from 'lib/constants';
 
 import { TextInput } from 'components/Input';
 
@@ -8,7 +7,7 @@ import Button from 'components/Button';
 
 import { validateEmail, validatePassword } from 'lib/utils';
 
-import Link from 'next/link'
+import Link from 'next/link';
 
 type FormProps = {
   formData: any;
@@ -102,6 +101,7 @@ const Form = forwardRef((props: FormProps, ref: any) => {
       {children}
       <Button
         disabled={!isFormValid}
+        // eslint-disable-next-line no-alert
         onClick={() => window.alert('Tried to login')}
       >
         Login

@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useState } from 'react';
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 
 import { css } from 'lib/constants';
@@ -100,7 +100,7 @@ const SelectInput = forwardRef((props: SelectProps, ref: any) => {
   );
 });
 
-Select.defaultProps = {
+SelectInput.defaultProps = {
   auxText: null,
   children: null,
   className: '',

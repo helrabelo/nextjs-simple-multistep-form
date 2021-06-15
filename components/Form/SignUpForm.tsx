@@ -1,6 +1,5 @@
 import React, { forwardRef, useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { css } from 'lib/constants';
 
 import { TextInput, SelectInput } from 'components/Input';
 
