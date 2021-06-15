@@ -10,60 +10,14 @@ import {
   defaultKeywords,
 } from 'lib/constants';
 
-import styled from 'styled-components';
-
-const PageContainer = styled.div`
-  border: thin solid red;
-  display: grid;
-  width: 100%;
-  height: 100vh;
-  grid-template-columns: 2fr 1fr;
-  align-items: center;
-`;
-
-const FormContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px 36px;
-`;
-
-const HeaderContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: ${css.colorBlue};
-  padding: 24px 36px;
-`;
-
-const HeaderWrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  max-width: 300px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: column;
-`;
-
-const Header = styled.h1`
-  font-size: 32px;
-  line-height: 48px;
-  margin-bottom: 48px;
-  text-align: center;
-  width: 100%;
-  color: ${css.colorWhite};
-`;
-
-const Copy = styled.p`
-  line-height: 32px;
-  font-weight: 200;
-  color: ${css.colorWhite};
-`;
+import {
+  PageContainer,
+  FormContainer,
+  HeaderContainer,
+  HeaderWrapper,
+  Header,
+  Copy,
+} from 'components/globals';
 
 const IndexPage = () => {
   const layoutProps = {

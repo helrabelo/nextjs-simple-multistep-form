@@ -30,6 +30,13 @@ const FormWrapper = styled.form`
   height: 100%;
   margin: 0 auto;
   max-width: 450px;
+  padding: 24px 32px;
+
+  @media (max-width: 768px) {
+    max-width: 300px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 `;
 
 const FormHeader = styled.h1`
