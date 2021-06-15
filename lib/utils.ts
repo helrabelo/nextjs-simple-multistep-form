@@ -17,3 +17,7 @@ export const validateName = (name) => nameRegexp.test(name);
 const passwordRegexp = /^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\d]){1,})(?=(.*[\W]){1,})(?!.*\s).{8,}$/;
 
 export const validatePassword = (password) => passwordRegexp.test(password);
+
+const usernameRegexp = /^[a-zA-Z0-9]([._-](?![._-])|[a-zA-Z0-9]){3,18}[a-zA-Z0-9]$/;
+
+export const validateUsername = (username) => usernameRegexp.test(username);

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import Layout from 'components/Layout';
-import { SignUpForm } from 'components/Form';
+import { LoginForm } from 'components/Form';
 
 import {
   css,
@@ -73,12 +73,8 @@ const IndexPage = () => {
   };
 
   const [form, setForm] = useState({
-    name: '',
     email: '',
     password: '',
-    repeatUser: '',
-    user: '',
-    userType: { value: 'admin', label: 'Admin' },
   });
 
   const handleFormChange = (field) => (e) =>
@@ -88,7 +84,7 @@ const IndexPage = () => {
     <Layout {...layoutProps}>
       <PageContainer>
         <FormContainer>
-          <SignUpForm formData={form} handleFormChange={handleFormChange} />
+          <LoginForm formData={form} handleFormChange={handleFormChange} />
         </FormContainer>
         <HeaderContainer>
           <HeaderWrapper>
